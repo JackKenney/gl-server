@@ -20,13 +20,13 @@ RUN go mod download
 COPY . .
 
 # Build the application
-RUN go build -o main gl-server
+RUN go build -o bin cmd/main.go
 
 # Move to /dist directory as the place for resulting binary folder
 WORKDIR /dist
 
-# Copy binary from build to main folder
-RUN cp /build/main .
+# # Copy binary from build to main folder
+RUN cp -r /build/bin/* .
 
 # Export necessary port
 EXPOSE 3000

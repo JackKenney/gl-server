@@ -2,6 +2,9 @@ package server
 
 import "github.com/gorilla/mux"
 
-type Server interface {
+type GLServer interface {
+}
+
+type Server struct {
 	m *mux.Router
 }

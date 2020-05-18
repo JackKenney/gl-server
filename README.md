@@ -21,3 +21,11 @@ docker run -p 3000:3000 gl-server
 ```bash
 go test ./...
 ```
+
+## Resources
+
+The main source for containerizing the programs is from here:
+https://levelup.gitconnected.com/complete-guide-to-create-docker-container-for-your-golang-application-80f3fb59a15e 
+
+The main standards for structuring the project came from here:
+https://github.com/golang-standards/project-layout
