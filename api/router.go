@@ -12,10 +12,9 @@ type Router http.Handler
 
 // ProvideRouter returns a Server object.
 func ProvideRouter(modelHandler *handler.ModelHandler) Router {
-	router := mux.NewRouter()
-	router = router.StrictSlash(false)
+	router := mux.NewRouter().StrictSlash(false)
 
-	router.HandleFunc("/api/health", func(w http.ResponseWriter, r *http.Request) {
+	router.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
 	})
 

@@ -9,15 +9,14 @@ import (
 	"github.com/jackkenney/gl-server/api"
 	"github.com/jackkenney/gl-server/api/handler"
 	"github.com/jackkenney/gl-server/model"
-	"time"
 )
 
 // Injectors from wire.go:
 
-func InjectServer(wait time.Duration) (*api.Server, error) {
+func InjectServer() (*api.Server, error) {
 	mockModel := model.ProvideMockModel()
 	modelHandler := handler.ProvideModelHandler(mockModel)
 	router := api.ProvideRouter(modelHandler)
-	server := api.ProvideServer(router, wait)
+	server := api.ProvideServer(router)
 	return server, nil
 }

@@ -4,13 +4,11 @@
 package main
 
 import (
-	"time"
-
 	"github.com/google/wire"
 	"github.com/jackkenney/gl-server/api"
 )
 
-func InjectServer(wait time.Duration) (*api.Server, error) {
+func InjectServer() (*api.Server, error) {
 	wire.Build(api.DefaultProviderSet)
 	return &api.Server{}, nil
 }
