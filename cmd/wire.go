@@ -10,10 +10,7 @@ import (
 	"github.com/jackkenney/gl-server/api"
 )
 
-func InjectServer(wait time.Duration) (api.Server, error) {
-	wire.Build(
-		api.DefaultProviderSet,
-		wire.Value(wait),
-	)
-	return api.Server{}, nil
+func InjectServer(wait time.Duration) (*api.Server, error) {
+	wire.Build(api.DefaultProviderSet)
+	return &api.Server{}, nil
 }

@@ -19,7 +19,7 @@ func ProvideRouter(modelHandler *handler.ModelHandler) Router {
 		w.WriteHeader(http.StatusOK)
 	})
 
-	modelRoutes := router.PathPrefix("/model").Subrouter()
+	modelRoutes := router.PathPrefix("/api/model").Subrouter()
 	modelHandler.RegisterRoutes(modelRoutes)
 
 	return router

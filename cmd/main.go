@@ -17,5 +17,5 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	server.Run("127.0.0.1", "3000")
+	server.Run(":3000")
 }

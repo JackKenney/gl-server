@@ -11,7 +11,7 @@ type Model interface {
 type MockModel struct{}
 
 // ProvideMockModel returns a mocked Model interface.
-func ProvideMockModel() Model {
+func ProvideMockModel() *MockModel {
 	return &MockModel{}
 }
 

@@ -22,8 +22,8 @@ COPY . .
 # Build the application
 RUN go build -o bin cmd/main.go cmd/wire.go
 
-# Move to /dist directory as the place for resulting binary folder
-WORKDIR /dist
+# Move to /target directory as the place for resulting binary folder
+WORKDIR /target
 
 # # Copy binary from build to main folder
 RUN cp -r /build/bin/* .
@@ -32,4 +32,4 @@ RUN cp -r /build/bin/* .
 EXPOSE 3000
 
 # Command to run when starting the container
-CMD ["/dist/main"]
+CMD ["/target/main"]
